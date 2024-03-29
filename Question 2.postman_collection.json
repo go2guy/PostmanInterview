@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "f2821deb-44ee-4d02-959f-622743c41d6a",
+		"name": "Question 2",
+		"description": "Setup authorizations to enable the GET Example request using OAuth2 and the params below in Question 2's collection's authorization tab.\n\nurl: \"[https://dev-ebt3ua8lkshbzsez.us.auth0.com/oauth/token\"](https://dev-ebt3ua8lkshbzsez.us.auth0.com/oauth/token)\n\nclient_id:\"qEopoFCVfjyGMV07tLnpmLJsKF7DvmuO\"\n\nclient_secret:\"ks2b9q4SbuhApA0c6rhW8GRbmX0eYJ47LiP0AlRBQhlhGbxEsE5ghuTeOPSQwEPP\"\n\naudience:\"[https://RandQ-InterviewAPI\"](https://RandQ-InterviewAPI)\n\ngrant_type:\"client_credentials\"\n\nscope: \"\" //blank will work fine\n\nSet the \"GET example\" to use the token you retrieved if necessary.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33934080",
+		"_collection_link": "https://www.postman.com/winter-shuttle-327889/workspace/interview-questions-ah/collection/1915426-f2821deb-44ee-4d02-959f-622743c41d6a?action=share&source=collection_link&creator=33934080"
+	},
+	"item": [
+		{
+			"name": "GET Example",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "tokenRequestParams",
+							"value": [
+								{
+									"key": "audience",
+									"value": "",
+									"enabled": true,
+									"send_as": "request_body"
+								}
+							],
+							"type": "any"
+						},
+						{
+							"key": "tokenName",
+							"value": "TSM",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randq-interviewapi.azurewebsites.net/AuthorizedTests",
+					"protocol": "https",
+					"host": [
+						"randq-interviewapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"AuthorizedTests"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	]
+}

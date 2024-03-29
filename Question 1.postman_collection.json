@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "4da90bea-6ed9-4b1b-baf6-30a20727345e",
+		"name": "Question 1",
+		"description": "Here, authorization has been handled for you already, you will only need to get a new token from the parent auth.\n\n2 tests are failing, run the tests and adjust them accordingly to make the tests pass.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33934080",
+		"_collection_link": "https://www.postman.com/winter-shuttle-327889/workspace/interview-questions-ah/collection/1915426-4da90bea-6ed9-4b1b-baf6-30a20727345e?action=share&source=collection_link&creator=33934080"
+	},
+	"item": [
+		{
+			"name": "Get Example With Tests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Array has a size of 15\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(15);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randq-interviewapi.azurewebsites.net/AuthorizedTests",
+					"protocol": "https",
+					"host": [
+						"randq-interviewapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"AuthorizedTests"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [
+					{
+						"key": "audience",
+						"value": "https://RandQ-InterviewAPI",
+						"enabled": true,
+						"send_as": "request_body"
+					}
+				],
+				"type": "any"
+			},
+			{
+				"key": "clientSecret",
+				"value": "ks2b9q4SbuhApA0c6rhW8GRbmX0eYJ47LiP0AlRBQhlhGbxEsE5ghuTeOPSQwEPP",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "qEopoFCVfjyGMV07tLnpmLJsKF7DvmuO",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://dev-ebt3ua8lkshbzsez.us.auth0.com/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "R&Q",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
